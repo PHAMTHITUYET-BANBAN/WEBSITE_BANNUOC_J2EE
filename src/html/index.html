@@ -3,9 +3,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cửa hàng đồ uống</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8c8e8;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color:blueviolet;
+            position: fixed;top: 0;left: 0;width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+           
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 1px;
+            background-color: blueviolet;
+        }
+
+        .nav-link:hover {
+            background-color: #46045f;
+        }
+
+        .search-bar {
+            width: 250px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #eacd27;
+            background-color: white;
+        }
+
+        .search-icon {
+            position: relative;
+            left: 220px;
+            top: -30px;
+            color: #cfb626;
+        }
+
+        .login-button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #FFD700;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background-color: #FFC107;
+        }
+
+        .cart-icon {
+            font-size: 20px;
+            color: white;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            padding-top: 150px;
+            padding-bottom: 150px;
+        }
+
+        .sidebar {
+            background-color: #eaa8ed;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            height:450px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .sidebar input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .sidebar .rating {
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar .rating i {
+            color: #efb915;
+            font-size: 1.2rem;
+            margin-right: 5px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .product {
+            background-color: #e0d287;
+            padding: 10px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .product img {
+            width: 70%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .product h3 {
+            margin-top: 10px;
+            font-size: 1.0rem;
+        }
+
+        .product .price {
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .add-to-cart {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #FFC107;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .products .buttons{
+   display: flex;
+   gap:1.0rem;
+   flex-wrap: wrap;
+   margin-top: 1rem;
+
+}
+
+.products .buttons a{
+   flex:1 1 16rem;
+   padding:0.7rem;
+   font-size: 0.9rem;
+   color:#141313;
+   border:.1rem solid #151515;
+
+}
+
+.products .buttons a.cart{
+   background-color: blueviolet;
+    box-shadow: 3px 3px 0px black;
+    transition: all 0.3s ease;
+}
+.products .buttons a.cart:hover{
+   background-color: black;
+    color: blueviolet;
+    border: 2px solid blueviolet;
+    box-shadow: 3px 3px 0px blueviolet;
+}
+.products .buttons a.buy{
+   background-color: #27ae60;
+    box-shadow: 3px 3px 0px black;
+    transition: all 0.3s ease;
+}
+.products .buttons a.buy:hover{
+   background-color: black;
+    color: #27ae60;
+    border: 2px solid #27ae60;
+    box-shadow: 3px 3px 0px #27ae60;
+}
+
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="logo">
+            <img src="/style/image/Thiết kế chưa có tên.png" alt="Coffee logo">
+        </div>
+        <div class="nav-links">
+            <a href="./Homepage.html" class="nav-link">TRANG CHỦ</a>
+            <a href="./menu.html" class="nav-link">MENU</a>
+            <a href="./khuyenmai.html" class="nav-link">KHUYẾN MÃI</a>
+            <a href="./vechungtoi.html" class="nav-link">VỀ CHÚNG TÔI</a>
+        </div>
+        <div>
+            <input type="text" class="search-bar" placeholder="Tìm kiếm...">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+        <a href="./login.html" class="nav-link">Đăng nhập</a>
+        <a href="./cart.html" class="nav-link">Giỏ hàng
+           </a>
+    </div>
+
+    <div class="content">
+        <div class="sidebar">
+            <h3>Loại sản phẩm</h3>
+            <div class="checkbox-group">
+                <input type="checkbox" id="trasua">
+                <label for="trasua">Trà sữa</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="sinhto">
+                <label for="sinhto">Sinh tố</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="tra">
+                <label for="tra">Trà</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="nuocep">
+                <label for="nuocep">Nước ép</label>
+            </div>
+            <h3>Giá bán</h3>
+            <div class="checkbox-group">
+                <input type="checkbox" id="thapdencao">
+                <label for="thapdencao">Thấp đến cao</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="caodenthap">
+                <label for="caodenthap">Cao đến thấp</label>
+            </div>
+            <h3>Đánh giá</h3>
+            <div class="rating">
+                <input type="radio" name="rating" id="rating-5">
+                <label for="rating-5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></label>
+            </div>
+            <div class="rating">
+                <input type="radio" name="rating" id="rating-4">
+                <label for="rating-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></label>
+            </div>
+            <div class="rating">
+                <input type="radio" name="rating" id="rating-3">
+                <label for="rating-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></label>
+            </div>
+            <div class="rating">
+                <input type="radio" name="rating" id="rating-2">
+                <label for="rating-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></label>
+            </div>
+            <div class="rating">
+                <input type="radio" name="rating" id="rating-1">
+                <label for="rating-1"><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></label>
+            </div>
+        </div>
+
+        <div class="products">
+            <div class="product">
+                <img src="/style/image/Kem-Vani-Tra-Sua-Tran-Chau-Hoang-Kim.png" alt="Trà sữa 1">
+                <h3>Tên sản phẩm</h3>
+                <p class="price">30.000đ</p>
+                <div class="buttons">
+                    <a href="./buy.html" class="buy">Mua Ngay</a>
+                    <a href="./cart.html" class="cart">Thêm vào giỏ hàng</a>
+                 </div>
+            </div>
+            <div class="product">
+                <img src="/style/image/Tra-Dao-Tien-Que-Hoa-1.png" alt="Sinh tố 1">
+                <h3>Tên sản phẩm</h3>
+                <p class="price">25.000đ</p>
+                <div class="buttons">
+                    <a href="./buy.html" class="buy">Mua Ngay</a>
+                    <a href="./cart.html" class="cart">Thêm vào giỏ hàng</a>
+                 </div>
+            </div>
+            <div class="product">
+                <img src="/style/image/Tra-Xanh-Dao-Que-Hoa.png" alt="Trà 1">
+                <h3>Tên sản phẩm</h3>
+                <p class="price">20.000đ</p>
+                <div class="buttons">
+                    <a href="./buy.html" class="buy">Mua Ngay</a>
+                    <a href="./cart.html" class="cart">Thêm vào giỏ hàng</a>
+                 </div>
+            </div>
+            <div class="product">
+                <img src="/style/image/Xanh-Nhai-Mang-Cau.png" alt="Trà sữa 2">
+                <h3>Tên sản phẩm</h3>
+                <p class="price">35.000đ</p>
+                <div class="buttons">
+                    <a href="#" class="buy">Mua Ngay</a>
+                    <a href="#" class="cart">Thêm vào giỏ hàng</a>
+                 </div>
+            </div>
+            <div class="product">
+                <img src="/style/image/Xanh-Nhai-Sua-Dua-Pho-Mai-Tuoi.png" alt="Sinh tố 2">
+                <h3>Tên sản phẩm</h3>
+                <p class="price">28.000đ</p>
+                <div class="buttons">
+                    <a href="#" class="buy">Mua Ngay</a>
+                    <a href="#" class="cart">Thêm vào giỏ hàng</a>
+                 </div>
+            </div>
+            <div class="product">
+                <img src="/style/image/z5200313014176_88115b1d87eae335d18ada8210389e0d.jpg" alt="Trà 2">
+                <h3>Tên sản phẩm</h3>
+                <p class="price">22.000đ</p>
+                <div class="buttons">
+                    <a href="#" class="buy">Mua Ngay</a>
+                    <a href="#" class="cart">Thêm vào giỏ hàng</a>
+                 </div>
+            </div>
+            <div class="product">
+                <img src="/style/image/z4853951474939_d2f4544ce4706979c9779d466a8efc5e.jpg" alt="Trà 2">
+                <h3>Tên sản phẩm</h3>
+                <p class="price">22.000đ</p>
+                <div class="buttons">
+                    <a href="#" class="buy">Mua Ngay</a>
+                    <a href="#" class="cart">Thêm vào giỏ hàng</a>
+                 </div>
+            </div>
+            <div class="product">
+                <img src="/style/image/z4853951474939_d2f4544ce4706979c9779d466a8efc5e.jpg" alt="Trà 2">
+                <h3>Tên sản phẩm</h3>
+                <p class="price">22.000đ</p>
+                <div class="buttons">
+                    <a href="#" class="buy">Mua Ngay</a>
+                    <a href="#" class="cart">Thêm vào giỏ hàng</a>
+                 </div>
+            </div>
+            <div class="product">
+                <img src="/style/image/z4925614520640_1babe5daea83472f4784ceb3cd206979.jpg" alt="Trà 2">
+                <h3>Tên sản phẩm</h3>
+                <p class="price">22.000đ</p>
+                <div class="buttons">
+                    <a href="#" class="buy">Mua Ngay</a>
+                    <a href="#" class="cart">Thêm vào giỏ hàng</a>
+                 </div>
+            </div>
+            <div class="product">
+                <img src="/style/image/Tra-Xanh-Dao-Que-Hoa.png" alt="Trà 2">
+                <h3>Tên sản phẩm</h3>
+                <p class="price">22.000đ</p>
+                <div class="buttons">
+                    <a href="#" class="buy">Mua Ngay</a>
+                    <a href="#" class="cart">Thêm vào giỏ hàng</a>
+                 </div>
+            </div>
+            <div class="product">
+                <img src="/style/image/Xanh-Nhai-Mang-Cau.png" alt="Trà 2">
+                <h3>Tên sản phẩm</h3>
+                <p class="price">22.000đ</p>
+                <div class="buttons">
+                    <a href="#" class="buy">Mua Ngay</a>
+                    <a href="#" class="cart">Thêm vào giỏ hàng</a>
+                 </div>
+            </div>
+            <div class="product">
+                <img src="/style/image/Tra-Xanh-Dao-Que-Hoa.png" alt="Trà 2">
+                <h3>Tên sản phẩm</h3>
+                <p class="price">22.000đ</p>
+                <div class="buttons">
+                    <a href="#" class="buy">Mua Ngay</a>
+                    <a href="#" class="cart">Thêm vào giỏ hàng</a>
+                 </div>
+            </div>
+        </div>
+    </div>
+<script>
+    window.onscroll = function() {
+  var container = document.querySelector(".container");
+  var scrollPosition = window.scrollY;
+  if (scrollPosition >= 200) {
+    container.classList.add("navbar-scrolled");
+  } else {
+    container.classList.remove("navbar-scrolled");
+  }
+};
+</script>
 </body>
 </html>
